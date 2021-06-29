@@ -9,7 +9,7 @@
         private $dbHandler;
         private $error;
 
-        private function __construct() {
+        public function __construct() {
             $conn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
             $options = array(
                 PDO::ATTR_PERSISTENT => true,
