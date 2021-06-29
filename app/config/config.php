@@ -13,4 +13,5 @@
 
     //SITENAME
     define('SITENAME', 'Framework em MVC');
+    //teste
 ?>
