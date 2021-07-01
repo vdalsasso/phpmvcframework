@@ -23,14 +23,14 @@
             }
         }
 
-        //permite adicionar queries
+        //Allows us to write queries
         public function query($sql) {
             $this->statement = $this->dbHandler->prepare($sql);
         }
 
-        //bind values
-        public function bind($parameter, $value, $type = null){
-            switch(is_null($type)) {
+        //Bind values
+        public function bind($parameter, $value, $type = null) {
+            switch (is_null($type)) {
                 case is_int($value):
                     $type = PDO::PARAM_INT;
                     break;
@@ -41,32 +41,30 @@
                     $type = PDO::PARAM_NULL;
                     break;
                 default:
-                $type = PDO::PARAM_STR;
+                    $type = PDO::PARAM_STR;
             }
-
             $this->statement->bindValue($parameter, $value, $type);
         }
 
-        //executar o prepated statemnt
+        //Execute the prepared statement
         public function execute() {
             return $this->statement->execute();
         }
 
-        //retornar array
+        //Return an array
         public function resultSet() {
             $this->execute();
             return $this->statement->fetchAll(PDO::FETCH_OBJ);
         }
 
-        //RETORNAR UM ROW ESPECIFICO COMO OBJETO
+        //Return a specific row as an object
         public function single() {
             $this->execute();
             return $this->statement->fetch(PDO::FETCH_OBJ);
         }
 
-        //pegar o rowcount
+        //Get's the row count
         public function rowCount() {
             return $this->statement->rowCount();
         }
     }
-?>

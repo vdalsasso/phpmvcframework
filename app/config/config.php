@@ -9,8 +9,9 @@
     define('APPROOT', dirname(dirname(__FILE__)));
 
     //URLROOT (links dinamicos)
-    define('URLROOT', 'localhost/phpmvcframework');
+    define('URLROOT', 'https://localhost/phpmvcframework');
 
     //SITENAME
     define('SITENAME', 'Framework em MVC');
+    //teste
 ?>

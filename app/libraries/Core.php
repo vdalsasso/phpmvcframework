@@ -6,7 +6,7 @@
         protected $params = [];
 
         public function __construct() {
-            //print_r($this->getUrl());
+            //print_r($this->());
             $url = $this->getUrl();
 
             //procura em 'controllers' pelo priemiro vlaor, ucwords capitaliza primeira letra
